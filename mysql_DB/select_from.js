@@ -1,0 +1,32 @@
+var mysql = require('mysql');
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "Jabina@123",
+  database: "mydb"
+});
+con.connect(function(err) {
+  if (err) throw err;
+  con.query("SELECT * FROM custome", function (err, result, fields) {
+    if (err) throw err;
+    console.log(result);
+  });
+});
+
+
+
+// // select name and address from table
+// var mysql = require('mysql');
+// var con = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "Jabina@123",
+//   database: "mydb"
+// });
+// con.connect(function(err) {
+//   if (err) throw err;
+//   con.query("SELECT name, address FROM custome", function (err, result, fields) {
+//     if (err) throw err;
+//     console.log(result);
+//   });
+// });
